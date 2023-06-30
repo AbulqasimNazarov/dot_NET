@@ -16,5 +16,9 @@ internal class Program
         Console.WriteLine($"Has value? --> {array.ValueToFind(12)}");
         //Find(params int[] valuesToFind) -> bool
         Console.WriteLine($"Has value? --> {array.ValuesssToFind(12, 5, 90)}");
+        //Plus(int[] anotherArr) -> int[]
+        int[] anotherArray = { 90, 566, 399 };
+        array = array.PlusAnotherArray(anotherArray);
+        array.SHOWarray();
     }
 }

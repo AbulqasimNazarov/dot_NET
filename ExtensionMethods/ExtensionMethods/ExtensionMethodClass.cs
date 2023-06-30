@@ -25,6 +25,22 @@ public static class ExtensionMethodClass
         return false;
     }
 
+    public static int[] PlusAnotherArray(this int[] arr, int[] anotherArray)
+    {
+        Console.WriteLine($"\n Plus Another array");
+        int[] newArray = new int[arr.Length + anotherArray.Length];
+        for (int i = 0; i < arr.Length; i++)
+        {
+            newArray[i] = arr[i];
+        }
+        for (int j = arr.Length, k = 0; j < newArray.Length; j++, k++)
+        {
+            newArray[j] = anotherArray[k];
+        }
+        arr = newArray;
+        return arr;
+    }
+
     public static bool ValuesssToFind(this int[] arr, params int[] valuesToFind)
     {
         int count = 0;
