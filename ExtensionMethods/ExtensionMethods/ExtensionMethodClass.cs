@@ -25,6 +25,22 @@ public static class ExtensionMethodClass
         return false;
     }
 
+    public static int[] AddPositiveNumberToArr(this int[] arr, Predicate<int> predicate, int num)
+    {
+        int[] ints = new int[arr.Length + 1];
+        if (predicate.Invoke(num) == false)
+        {
+            num *= -1;
+        }
+        for (int i = 0; i < arr.Length; i++)
+        {
+            ints[i] = arr[i];
+        }
+        ints[ints.Length - 1] = num;
+        arr = ints;
+        return arr;       
+    }
+
     public static int[] PlusAnotherArray(this int[] arr, int[] anotherArray)
     {
         Console.WriteLine($"\n Plus Another array");

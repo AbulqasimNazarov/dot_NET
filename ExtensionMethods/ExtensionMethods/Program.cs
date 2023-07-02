@@ -2,6 +2,10 @@
 
 internal class Program
 {
+    public static bool IsNumberPositive(int number)
+    {
+        return number > 0;
+    }
     static void Main()
     {
         int[] array = { 43, 66, 5, 12, 90 };
@@ -20,5 +24,10 @@ internal class Program
         int[] anotherArray = { 90, 566, 399 };
         array = array.PlusAnotherArray(anotherArray);
         array.SHOWarray();
+        //Get(Predicate<int> predicate) -> int[]
+        Predicate<int> predicate = IsNumberPositive;
+        array = array.AddPositiveNumberToArr(predicate, 67);
+        array.SHOWarray();
+
     }
 }
